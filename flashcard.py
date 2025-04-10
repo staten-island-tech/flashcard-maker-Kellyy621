@@ -7,9 +7,7 @@ def load_flashcards():
      except FileNotFoundError:
         return {}
     
-def save_flashcards(flashcards):
-     with open('Flashcards.json', 'w') as file:
-         json.dump(flashcards, file)        
+      
 
 flashcards = {
      "An apple a day keeps the doctor away":"Famous saying",
@@ -47,7 +45,7 @@ def student_mode():
      
      score = 0
      for word, answer in flashcards.items():
-          user_answer = input(f"What is the answer tp the '{word}'?")
+          user_answer = input(f"What is the answer to the '{word}'?")
           if user_answer == answer:
                score+=1
                print(f"Correct, your score is {score}/{len(flashcards)}!") #len counts the number of flashcards 
@@ -56,5 +54,6 @@ def student_mode():
 
      print(f"Your final score is {score}/{len(flashcards)}")
   
-if __name__ == "__main__":
-     main()
+def save_flashcards(flashcards):
+     with open('Flashcards.json', 'w') as file:
+         json.dump(flashcards, file)  
