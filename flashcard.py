@@ -6,22 +6,23 @@ def load_flashcards():
             return json.load(file)
      except FileNotFoundError:
         return {}
-    
-      
+def save_flashcards(flashcards):
+     with open('Flashcards.json', 'w') as file:
+         json.dump(flashcards, file)  
 
 flashcards = {
      "An apple a day keeps the doctor away":"Famous saying",
      "Mean girls":"Highschool movie"
-}
+} 
 
 def main():
      while True:
-          mode = input("Pick your mode (Teacher/student) or 'exit' to quit")
-          if mode == 'teacher':
+         mode = input("Pick your mode (Teacher/student) or 'exit' to quit")
+         if mode == 'teacher':
                teacher_mode()
-          elif mode == 'student':
+         elif mode == 'student':
                student_mode()
-          elif mode == 'exit':
+         elif mode == 'exit':
                break
 
 def teacher_mode():
@@ -52,8 +53,5 @@ def student_mode():
           else:
                print(f"Wrong, the correct answer is: {word}")
 
-     print(f"Your final score is {score}/{len(flashcards)}")
+     print(f"Your final score is {score}/{len(flashcards)}") #amount right/amount of flashcards
   
-def save_flashcards(flashcards):
-     with open('Flashcards.json', 'w') as file:
-         json.dump(flashcards, file)  
