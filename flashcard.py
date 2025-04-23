@@ -12,7 +12,8 @@ def save_flashcards(flashcards):
 
 flashcards = {
      "An apple a day keeps the doctor away":"Famous saying",
-     "Mean girls":"Highschool movie"
+     "Mean girls":"Highschool movie",
+     "Peppa pig":"kids show"
 } 
 
 def main():
