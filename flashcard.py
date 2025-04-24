@@ -24,12 +24,13 @@ def main():
          elif mode == 'student':
                student_mode()
          elif mode == 'exit':
+               print("Bye!")
                break
 
 def teacher_mode():
     flashcards = load_flashcards()
     while True:
-        word =  input ("Enter word/phrase(or'exit' to stop):")
+        word =  input(f"Enter word/phrase(or'exit' to stop):")
         if word == 'exit':
                 break 
         answer = input("Enter the answer for '{word}':")
