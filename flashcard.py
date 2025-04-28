@@ -20,9 +20,9 @@ def main():
      while True:
          mode = input("Pick your mode (Teacher/student) or 'exit' to quit")
          if mode == 'teacher':
-               teacher_mode()
+               teacher_mode() #calls the teacher mode 
          elif mode == 'student':
-               student_mode()
+               student_mode() #calls student mode 
          elif mode == 'exit':
                print("Bye!")
                break
@@ -36,15 +36,16 @@ def teacher_mode():
         answer = input("Enter the answer for '{word}':")
         flashcards[word]= answer 
     save_flashcards(flashcards)
-    print("Your flashcards are saved! :)")
+    print("Your flashcards are saved!")
 
 def student_mode():
      flashcards = load_flashcards()
      print("Loaded flashcards in student mode:", flashcards)
 
      if not flashcards:
-          print("There are no flashcards available :(")
+          print("There are no flashcards available")
           return
+
      
      score = 0
      for word, answer in flashcards.items():
@@ -57,3 +58,5 @@ def student_mode():
 
      print(f"Your final score is {score}/{len(flashcards)}") #amount right/amount of flashcards
   
+if __name__ == "__main":
+     main()
