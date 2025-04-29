@@ -10,12 +10,6 @@ def save_flashcards(flashcards):
      with open('Flashcards.json', 'w') as file:
          json.dump(flashcards, file)  
 
-flashcards = {
-     "An apple a day keeps the doctor away":"Famous saying",
-     "Mean girls":"Highschool movie",
-     "Peppa pig":"kids show"
-} 
-
 def main():
      while True:
          mode = input("Pick your mode (Teacher/student) or 'exit' to quit")
@@ -28,15 +22,15 @@ def main():
                break
 
 def teacher_mode():
-    flashcards = load_flashcards()
-    while True:
+     flashcards = load_flashcards()
+     while True:
         word =  input(f"Enter word/phrase(or'exit' to stop):")
         if word == 'exit':
                 break 
         answer = input("Enter the answer for '{word}':")
         flashcards[word]= answer 
-    save_flashcards(flashcards)
-    print("Your flashcards are saved!")
+     save_flashcards(flashcards)
+     print("Your flashcards are saved!")
 
 def student_mode():
      flashcards = load_flashcards()
